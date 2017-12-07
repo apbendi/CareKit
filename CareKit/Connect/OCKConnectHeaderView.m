@@ -64,13 +64,15 @@ static const CGFloat ImageViewSize = 75.0;
 
 - (void)prepareView {
     if (!UIAccessibilityIsReduceTransparencyEnabled()) {
-        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+//        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
         
-        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleProminent];
-        UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-        blurEffectView.frame = self.bounds;
-        blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        [self addSubview:blurEffectView];
+        self.backgroundColor = [UIColor clearColor]; // MBH
+        // MBH
+//        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleProminent];
+//        UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+//        blurEffectView.frame = self.bounds;
+//        blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//        [self addSubview:blurEffectView];
     }
     else {
         self.backgroundColor = [UIColor whiteColor];
@@ -102,6 +104,7 @@ static const CGFloat ImageViewSize = 75.0;
         _titleLabel.numberOfLines = 0;
         _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.textColor = [UIColor whiteColor]; // MBH
         [self addSubview:_titleLabel];
     }
     

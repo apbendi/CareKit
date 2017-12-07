@@ -87,6 +87,7 @@
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    _tableView.backgroundColor = [UIColor clearColor]; // MBH
     [self.view addSubview:_tableView];
     
     [self prepareHeaderView];
@@ -365,6 +366,9 @@
         cell.tintColor = self.view.tintColor;
         cell.textLabel.text = _sectionedContacts[indexPath.section][indexPath.row].name;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.backgroundColor = [UIColor clearColor]; // MBH
+        cell.textLabel.textColor = [UIColor whiteColor]; // MBH.  For Inbox?
+        cell.detailTextLabel.textColor = [UIColor whiteColor]; // MBH.
         return cell;
         
     } else {
@@ -375,6 +379,7 @@
                                                   reuseIdentifier:CellIdentifier];
         }
         cell.contact = _sectionedContacts[indexPath.section][indexPath.row];
+        cell.backgroundColor = [UIColor clearColor]; // MBH
         return cell;
     }
     return nil;

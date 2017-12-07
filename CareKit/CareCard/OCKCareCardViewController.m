@@ -100,6 +100,12 @@
     self.navigationItem.rightBarButtonItem.tintColor = self.glyphTintColor;
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    
+    /* backgroungColor, opacity, backgroundView set by Matt */
+    _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.opaque = NO;
+    _tableView.backgroundView = nil;
+    
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [self.view addSubview:_tableView];
@@ -124,6 +130,8 @@
     NSAssert(self.navigationController, @"OCKCareCardViewController must be embedded in a navigation controller.");
     
     _weekViewController.weekView.delegate = self;
+    /* Matt */
+    _weekViewController.view.backgroundColor = [UIColor redColor];
 }
 
 - (void)showToday:(id)sender {

@@ -53,11 +53,12 @@ static const CGFloat RingViewSize = 110.0;
         if (!UIAccessibilityIsReduceTransparencyEnabled()) {
             self.backgroundColor = [UIColor groupTableViewBackgroundColor];
             
-            UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleProminent];
-            UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-            blurEffectView.frame = self.bounds;
-            blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            [self addSubview:blurEffectView];
+            // MBH
+//            UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleProminent];
+//            UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+//            blurEffectView.frame = self.bounds;
+//            blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//            [self addSubview:blurEffectView];
         }
         else {
             self.backgroundColor = [UIColor whiteColor];
@@ -78,7 +79,8 @@ static const CGFloat RingViewSize = 110.0;
     if (!_dateLabel) {
         _dateLabel = [OCKLabel new];
         _dateLabel.textStyle = UIFontTextStyleCaption1;
-        _dateLabel.textColor = [UIColor lightGrayColor];
+//        _dateLabel.textColor = [UIColor lightGrayColor];
+        _dateLabel.textColor = [UIColor whiteColor]; // MBH
         _dateLabel.numberOfLines = 0;
     }
     
@@ -86,6 +88,7 @@ static const CGFloat RingViewSize = 110.0;
         _titleLabel = [OCKLabel new];
         _titleLabel.numberOfLines = 0;
         _titleLabel.textStyle = UIFontTextStyleHeadline;
+        _titleLabel.textColor = [UIColor whiteColor]; // MBH
     }
     
     if (!_verticalStackView) {

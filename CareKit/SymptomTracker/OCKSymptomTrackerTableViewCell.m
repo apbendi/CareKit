@@ -73,13 +73,15 @@ static const CGFloat HorizontalMargin = 10.0;
     if (!_titleLabel) {
         _titleLabel = [OCKLabel new];
         _titleLabel.textStyle = UIFontTextStyleHeadline;
+        _titleLabel.textColor = [UIColor whiteColor]; // MBH
         [self addSubview:_titleLabel];
     }
     
     if (!_textLabel) {
         _textLabel = [OCKLabel new];
         _textLabel.textStyle = UIFontTextStyleSubheadline;
-        _textLabel.textColor = [UIColor lightGrayColor];
+//        _textLabel.textColor = [UIColor lightGrayColor];
+        _textLabel.textColor = [UIColor whiteColor]; // MBH
         [self addSubview:_textLabel];
     }
     
@@ -87,6 +89,7 @@ static const CGFloat HorizontalMargin = 10.0;
         _valueLabel = [OCKLabel new];
         _valueLabel.textStyle = UIFontTextStyleTitle1;
         _valueLabel.textAlignment = NSTextAlignmentRight;
+        _valueLabel.textColor = [UIColor whiteColor]; // MBH
         [self addSubview:_valueLabel];
     }
     
@@ -106,7 +109,8 @@ static const CGFloat HorizontalMargin = 10.0;
             _unitLabel = [OCKLabel new];
             _unitLabel.textStyle = UIFontTextStyleCaption2;
             _unitLabel.textAlignment = NSTextAlignmentRight;
-            _unitLabel.textColor = [UIColor lightGrayColor];
+//            _unitLabel.textColor = [UIColor lightGrayColor];
+            _unitLabel.textColor = [UIColor whiteColor]; // MBH
             [self addSubview:_unitLabel];
         }
         _unitLabel.text = self.assessmentEvent.result.unitString;

@@ -117,6 +117,7 @@
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    _tableView.backgroundColor = [UIColor clearColor]; // MBH
     [self.view addSubview:_tableView];
     
     [self prepareView];
@@ -156,6 +157,7 @@
     }
     _headerView.isCareCard = YES;
     _headerView.glyphType = self.glyphType;
+    _headerView.backgroundColor = [UIColor clearColor]; // MBH
     
     if (!_pageViewController) {
         _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
@@ -166,12 +168,12 @@
         
         if (!UIAccessibilityIsReduceTransparencyEnabled()) {
             _pageViewController.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-            
-            UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleProminent];
-            UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-            blurEffectView.frame = _pageViewController.view.bounds;
-            blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            [_pageViewController.view insertSubview:blurEffectView atIndex:_pageViewController.view.subviews.count-1];
+            _pageViewController.view.backgroundColor = [UIColor clearColor]; // MBH
+//            UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleProminent];
+//            UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+//            blurEffectView.frame = _pageViewController.view.bounds;
+//            blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//            [_pageViewController.view insertSubview:blurEffectView atIndex:_pageViewController.view.subviews.count-1];
         }
         else {
             _pageViewController.view.backgroundColor = [UIColor whiteColor];
@@ -182,6 +184,8 @@
         weekController.weekView.ringTintColor = self.glyphTintColor;
         weekController.weekView.isCareCard = YES;
         weekController.weekView.glyphType = self.glyphType;
+        weekController.view.backgroundColor = [UIColor clearColor]; // MBH
+        weekController.weekView.backgroundColor = [UIColor clearColor]; // MBH
         _weekViewController = weekController;
         
         [_pageViewController setViewControllers:@[weekController] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
@@ -699,6 +703,7 @@
         }
         
         cell.assessmentEvent = event;
+        cell.backgroundColor = [UIColor clearColor]; // MBH
         
         return cell;
     }
@@ -712,7 +717,8 @@
         }
         
         cell.readOnlyEvent = event;
-
+        cell.backgroundColor = [UIColor clearColor]; // MBH
+        
         return cell;
     }
     else {
@@ -726,6 +732,7 @@
         
         cell.interventionEvents = events;
         cell.delegate = self;
+        cell.backgroundColor = [UIColor clearColor]; // MBH
         
         return cell;
     }

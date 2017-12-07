@@ -69,13 +69,15 @@ static const CGFloat ImageViewSize = 40.0;
     if (!_nameLabel) {
         _nameLabel = [OCKLabel new];
         _nameLabel.textStyle = UIFontTextStyleHeadline;
+        _nameLabel.textColor = [UIColor whiteColor]; // MBH
         [self addSubview:_nameLabel];
     }
     
     if (!_relationLabel) {
         _relationLabel = [OCKLabel new];
         _relationLabel.textStyle = UIFontTextStyleSubheadline;
-        _relationLabel.textColor = [UIColor lightGrayColor];
+//        _relationLabel.textColor = [UIColor lightGrayColor];
+        _relationLabel.textColor = [UIColor whiteColor]; // MBH
         [self addSubview:_relationLabel];
     }
     
