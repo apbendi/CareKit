@@ -345,6 +345,12 @@
     return _sectionTitles[section];
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    UITableViewHeaderFooterView *headerView = (UITableViewHeaderFooterView *)view;
+    headerView.textLabel.textColor = UIColor.whiteColor;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if ([self shouldInboxBeVisible] && section == 0) {
         return [self.dataSource connectViewControllerCareTeamConnections:self].count;

@@ -304,6 +304,12 @@
     return tableView.numberOfSections - 1 == section ? OCKLocalizedString(@"INSIGHTS_SECTION_HEADER_TITLE_INSIGHTS", nil) : OCKLocalizedString(@"INSIGHTS_SECTION_HEADER_TITLE_THRESHOLD_ALERTS", nil);
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    UITableViewHeaderFooterView *headerView = (UITableViewHeaderFooterView *)view;
+    headerView.textLabel.textColor = UIColor.whiteColor;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0 && tableView.numberOfSections == 2) {
