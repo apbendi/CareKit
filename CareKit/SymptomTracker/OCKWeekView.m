@@ -58,19 +58,7 @@ static const CGFloat TrailingMargin = 15.0;
 
 - (void)prepareView {
     
-    if (!UIAccessibilityIsReduceTransparencyEnabled()) {
-        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        
-        //MBH
-//        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleProminent];
-//        UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-//        blurEffectView.frame = self.bounds;
-//        blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//        [self addSubview:blurEffectView];
-    }
-    else {
-        self.backgroundColor = [UIColor whiteColor];
-    }
+    self.backgroundColor = UIColor.clearColor;
  
     if (!_weekView) {
         _weekView = [[OCKWeekLabelsView alloc] initWithFrame:CGRectZero];
