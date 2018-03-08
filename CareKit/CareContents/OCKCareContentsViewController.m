@@ -683,7 +683,14 @@
     if ([sectionTitle isEqualToString:_otherString] && (_sectionTitles.count == 1 || (_sectionTitles.count == 2 && [_sectionTitles containsObject:_optionalString]))) {
         sectionTitle = @"";
     }
-    return sectionTitle;
+    
+    NSArray<NSString *> *splitTitle = [sectionTitle componentsSeparatedByString:@"_"];
+    
+    if (nil == splitTitle.lastObject) {
+        return sectionTitle;
+    }
+    
+    return splitTitle.lastObject;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
