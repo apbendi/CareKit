@@ -536,9 +536,9 @@
         OCKCarePlanEvent *firstEvent = activityEvents.firstObject;
         NSString *groupIdentifier = firstEvent.activity.groupIdentifier ? firstEvent.activity.groupIdentifier : _otherString;
         
-        if (firstEvent.activity.optional) {
-            groupIdentifier = firstEvent.activity.type == OCKCarePlanActivityTypeReadOnly ? _readOnlyString : _optionalString;
-        }
+//        if (firstEvent.activity.optional) {
+//            groupIdentifier = firstEvent.activity.type == OCKCarePlanActivityTypeReadOnly ? _readOnlyString : _optionalString;
+//        }
         
         if (groupedEvents[groupIdentifier]) {
             NSMutableArray<NSArray *> *objects = [groupedEvents[groupIdentifier] mutableCopy];
